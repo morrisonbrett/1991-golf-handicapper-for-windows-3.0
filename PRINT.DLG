@@ -1,0 +1,10 @@
+PRINT DIALOG 10, 10, 100, 76
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_VISIBLE
+CAPTION "Complete Golf Handicapper"
+FONT 8, "Helv"
+BEGIN
+  CTEXT "Sending",                  -1, 0, 10, 100,  8
+  CTEXT "",     IDD_FNAME,              0, 20, 100,  8
+  CTEXT "to print spooler.",        -1, 0, 30, 100,  8
+  DEFPUSHBUTTON "&Cancel", IDCANCEL,    34, 50,  32, 14, WS_GROUP
+END

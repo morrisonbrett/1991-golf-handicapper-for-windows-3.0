@@ -1,0 +1,95 @@
+#include "golf.h"
+
+GOLFICON        ICON GOLF.ICO
+FACEICON        ICON FACE.ICO
+EXCLAMICON      ICON EXCLAM.ICO
+QUESTIONICON    ICON QUESTION.ICO
+STOPICON        ICON STOP.ICO
+INFORMICON      ICON INFORM.ICO
+FLAGICON        ICON FLAG.ICO
+
+GOLFMENU MENU LOADONCALL MOVEABLE PURE DISCARDABLE
+BEGIN
+  POPUP "&File"
+  BEGIN
+    POPUP  "&New"
+    BEGIN
+      Menuitem "&Course", IDM_NEW_C
+      Menuitem "&Player", IDM_NEW_P
+    END
+    POPUP  "&Open..."
+    BEGIN
+      Menuitem "&Course", IDM_OPEN_C
+      Menuitem "&Player", IDM_OPEN_P
+    END
+    POPUP  "&Save"
+    BEGIN
+      Menuitem "&Course", IDM_SAVE_C
+      Menuitem "&Player", IDM_SAVE_P
+    END
+    POPUP  "Save &As..."
+    BEGIN
+      Menuitem "&Course", IDM_SAVEAS_C
+      Menuitem "&Player", IDM_SAVEAS_P
+    END
+    POPUP  "&Print..."
+    BEGIN
+      Menuitem "&Course", IDM_PRINT_C, GRAYED
+      Menuitem "&Player", IDM_PRINT_P, GRAYED
+    END
+    MenuItem  SEPARATOR
+    MenuItem  "E&xit", IDM_EXIT
+  END
+  POPUP "&Edit"
+  BEGIN
+    MenuItem  "&Undo\tAlt+BkSp", IDM_UNDO
+    MenuItem  SEPARATOR
+    MenuItem  "Cu&t\tShift+Del", IDM_CUT
+    MenuItem  "&Copy\tCtrl+Ins", IDM_COPY
+    MenuItem  "&Paste\tShift+Ins", IDM_PASTE
+    MenuItem  "C&lear\tDel", IDM_CLEAR
+  END
+  POPUP "&Add"
+  BEGIN
+    MenuItem  "&Course...", IDM_C_ADD
+    MenuItem  "&Player...", IDM_P_ADD
+    MenuItem  "&Round...", IDM_R_ADD, GRAYED
+  END
+  POPUP "&Delete"
+  BEGIN
+    MenuItem  "&Course...", IDM_C_DELETE, GRAYED
+    MenuItem  "&Player...", IDM_P_DELETE, GRAYED
+    MenuItem  "&Round...", IDM_R_DELETE, GRAYED
+  END
+  POPUP "&Tools"
+  BEGIN
+    POPUP  "&Search..."
+    BEGIN
+      Menuitem "&Course", IDM_C_SEARCH, GRAYED
+      Menuitem "&Player", IDM_P_SEARCH, GRAYED
+    END
+    POPUP  "&Sort..."
+    BEGIN
+      Menuitem "&Course", IDM_C_SORT, GRAYED
+      Menuitem "&Player", IDM_P_SORT, GRAYED
+      Menuitem "&Round", IDM_R_SORT, GRAYED
+    END
+    MenuItem  "&Graph...", IDM_GRAPH, GRAYED
+  END
+  POPUP "&Help"
+  BEGIN
+    MenuItem  "&Contents", IDM_CONTENTS
+    MenuItem  "&Search for Help on...", IDM_SEARCHON
+    MenuItem  "How to Use Help", IDM_USE
+    MenuItem  SEPARATOR
+    MenuItem  "&About Handicapper...", IDM_ABOUT
+  END
+END
+
+rcinclude about.dlg
+rcinclude deletec.dlg
+rcinclude golfmain.dlg
+rcinclude namedate.dlg
+rcinclude print.dlg
+rcinclude search.dlg
+rcinclude handicap.dlg
